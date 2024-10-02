@@ -1,5 +1,6 @@
 import customtkinter
 from PIL import Image
+from equipos_paquetes import equipos_paquetes_ui
 
 icono_crear_cliente = customtkinter.CTkImage(light_image=Image.open("img/agregar-usuario.png"),
                                     dark_image=Image.open("img/agregar-usuario.png"),
@@ -40,7 +41,8 @@ def panel_inicio(login_ventana):
                                                 image=icono_crear_cliente)
     
     buton_crear_paquete = customtkinter.CTkButton(barra_opcion, text="",
-                                                image=icono_crear_paquete)
+                                                image=icono_crear_paquete,
+                                                command=equipos_paquetes_ui)
     
     buton_registro_pago = customtkinter.CTkButton(barra_opcion, text="",
                                                 image=icono_registo_pago)

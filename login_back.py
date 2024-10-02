@@ -7,8 +7,8 @@ def connect_db():
         connection = mysql.connector.connect(
             host='localhost',     # Cambia a la dirección de tu servidor MySQL
             database='spider', # Cambia al nombre de tu base de datos
-            user='dni',          # Cambia al nombre de usuario de tu base de datos
-            password='MinuzaFea265/'  # Cambia a tu contraseña
+            user='ciso',          # Cambia al nombre de usuario de tu base de datos
+            password='ciso'  # Cambia a tu contraseña
         )
         if connection.is_connected():
             print("Conexión exitosa a la base de datos")
