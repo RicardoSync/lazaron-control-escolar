@@ -1,7 +1,5 @@
-import customtkinter
 import mysql.connector
-from tkinter import END
-from notificaciones import enviar_notificacion
+from clientes_ui import clientes_ui_chidos
 
 #Variable para las fuentes
 titulo = ("Monospace", 14, "bold")
@@ -12,6 +10,7 @@ routers_guardados = []
 antenas_guardadas = []
 paquetes_guardados = []
 antenas_guardadas_modelo = []
+modelo_routers = []
 
 #Conexion a la base de datos()
 mydb = mysql.connector.connect(
@@ -60,3 +59,24 @@ def obtener_paquetes():
     paquetes_guardados = [fila[1] for fila in resultado_paquetes]
 
 
+def obtener_modelos_routers():
+    global modelo_routers
+
+    cursor = mydb.cursor()
+    cursor.execute("SELECT * FROM routers")
+    resultado = cursor.fetchall()
+
+    modelo_routers = [fila[2] for fila in resultado]
+
+
+
+def llamado_avengers():
+    obtener_antenas()
+    obtener_antenas_modelo()
+    obtener_paquetes()
+    obtener_routers()
+    obtener_modelos_routers()
+
+    clientes_ui_chidos(routers_guardados, antenas_guardadas, paquetes_guardados, antenas_guardadas_modelo, modelo_routers)
+
+llamado_avengers()

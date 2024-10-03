@@ -1,6 +1,7 @@
 import customtkinter
 from PIL import Image
 from equipos_paquetes import equipos_paquetes_ui
+from clientes import llamado_avengers
 
 icono_crear_cliente = customtkinter.CTkImage(light_image=Image.open("img/agregar-usuario.png"),
                                     dark_image=Image.open("img/agregar-usuario.png"),
@@ -38,7 +39,8 @@ def panel_inicio(login_ventana):
 
     #Definimos los botones de la barra de opciones
     buton_crear_cliente = customtkinter.CTkButton(barra_opcion, text="",
-                                                image=icono_crear_cliente)
+                                                image=icono_crear_cliente,
+                                                command=llamado_avengers)
     
     buton_crear_paquete = customtkinter.CTkButton(barra_opcion, text="",
                                                 image=icono_crear_paquete,
